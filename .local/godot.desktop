@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=4.1
+Type=Application
+Name=godot
+GenericName=Game Engine
+Comment=2D and 3D game engine
+TryExec=/home/<USER>/.local/godot.app/bin/godot
+Exec=/home/<USER>/.local/godot.app/bin/godot
+Icon=/home/<USER>/.local/godot.app/icon.png
+Categories=Development;
+
