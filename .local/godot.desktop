@@ -7,5 +7,4 @@ Comment=2D and 3D game engine
 TryExec=/home/<USER>/.local/godot.app/bin/godot
 Exec=/home/<USER>/.local/godot.app/bin/godot
 Icon=/home/<USER>/.local/godot.app/icon.png
-Categories=Development;
-
+Categories=IDE;Development;
