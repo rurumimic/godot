@@ -5,8 +5,8 @@
 
 namespace godot {
 
-class GDExample : public Sprite2D {
-  GDCLASS(GDExample, Sprite2D)
+class GDExample : public Sprite2D { // container class
+  GDCLASS(GDExample, Sprite2D) // macro: set up a few internal things
 
 private:
   double time_passed;

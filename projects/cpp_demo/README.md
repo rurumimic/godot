@@ -19,13 +19,64 @@ Create directories:
 mkdir demo src
 ```
 
-Add `.clangd`:
+Add lines to .gitignore:
 
-```clangd
-CompileFlags:
-  Add:
-    - "-I/path/to/godot-cpp/gen/include"
-    - "-I/path/to/godot-cpp/include"
-    - "-I/path/to/godot-cpp/gdextension"
+```bash
+echo 'godot-cpp' >> .gitignore
+```
+
+Clone the repo:
+
+```bash
+git clone -b 4.1 https://github.com/godotengine/godot-cpp
+cd godot-cpp
+```
+
+Create a result file:
+
+```bash
+godot --dump-extension-api
+```
+
+Run SCons with Clang:
+
+```bash
+bear -- scons platform=linux -j12 custom_api_file=../extension_api.json use_llvm=yes
+```
+
+a static library:
+
+```bash
+cpp_demo/godot-cpp/bin/
+└── libgodot-cpp.linux.template_debug.x86_64.a
+```
+
+Run SCons with Clang:
+
+```bash
+bear -- scons platform=linux -j12 custom_api_file=./extension_api.json use_llvm=yes
+# or g++
+scons platform=linux -j12 custom_api_file=./extension_api.json
+```
+
+## Compile the plugin
+
+### Download a SConstruct file
+
+```bash
+cpp_demo/
+├── README.md
+├── icon.svg
+├── SConstruct
+├── project.godot
+├── demo/
+├── godot-cpp/
+└── src/
+```
+
+```bash
+bear -- scons platform=linux -j12 use_llvm=yes
+# or g++
+scons platform=linux -j12
 ```
 
