@@ -41,7 +41,9 @@ cat /proc/cpuinfo | grep -c processor
 Run SCons with Clang:
 
 ```bash
-scons platform=linux -j12 custom_api_file=./extension_api.json use_llvm=yes
+bear -- scons platform=linux -j12 custom_api_file=./extension_api.json use_llvm=yes
+# or g++
+scons platform=linux -j12 custom_api_file=./extension_api.json
 ```
 
 a static library:

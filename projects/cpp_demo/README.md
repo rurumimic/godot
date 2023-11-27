@@ -19,35 +19,13 @@ Create directories:
 mkdir demo src
 ```
 
-Add lines to .gitignore:
+Add `.clangd`:
 
-```bash
-echo 'godot-cpp' >> .gitignore
-```
-
-Clone the repo:
-
-```bash
-git clone -b 4.1 https://github.com/godotengine/godot-cpp
-cd godot-cpp
-```
-
-Create a result file:
-
-```bash
-godot --dump-extension-api
-```
-
-Run SCons with Clang:
-
-```bash
-scons platform=linux -j12 custom_api_file=../extension_api.json use_llvm=yes
-```
-
-a static library:
-
-```bash
-cpp_demo/godot-cpp/bin/
-└── libgodot-cpp.linux.template_debug.x86_64.a
+```clangd
+CompileFlags:
+  Add:
+    - "-I/path/to/godot-cpp/gen/include"
+    - "-I/path/to/godot-cpp/include"
+    - "-I/path/to/godot-cpp/gdextension"
 ```
 
