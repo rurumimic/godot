@@ -23,6 +23,8 @@ Add lines to .gitignore:
 
 ```bash
 echo 'godot-cpp' >> .gitignore
+echo '.clangd' >> .gitignore
+echo 'compile_commands.json' >> .gitignore
 ```
 
 Clone the repo:
@@ -61,6 +63,52 @@ scons platform=linux -j12 custom_api_file=./extension_api.json
 
 ## Compile the plugin
 
+### Create a Godot Project
+
+in demo, create a project and `main.tscn`
+
+```bash
+cpp_demo/
+├── .clangd
+├── .gitignore
+├── README.md
+├── SConstruct
+├── demo/
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── .godot/
+│   ├── icon.svg
+│   ├── icon.svg.import
+│   ├── main.tscn
+│   └── project.godot
+├── godot-cpp/
+└── src/
+```
+
+### Plugin files
+
+```bash
+cpp_demo/
+├── .clangd
+├── .gitignore
+├── README.md
+├── SConstruct
+├── demo/
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── .godot/
+│   ├── icon.svg
+│   ├── icon.svg.import
+│   ├── main.tscn
+│   └── project.godot
+├── godot-cpp/
+└── src/
+    ├── gdexample.cpp
+    ├── gdexample.h
+    ├── register_types.cpp
+    └── register_types.h
+```
+
 ### Download a SConstruct file
 
 ```bash
@@ -70,13 +118,65 @@ cpp_demo/
 ├── SConstruct
 ├── project.godot
 ├── demo/
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── .godot/
+│   ├── icon.svg
+│   ├── icon.svg.import
+│   ├── main.tscn
+│   └── project.godot
 ├── godot-cpp/
 └── src/
+    ├── gdexample.cpp
+    ├── gdexample.h
+    ├── register_types.cpp
+    └── register_types.h
 ```
+
+### Compile with SCons
 
 ```bash
 bear -- scons platform=linux -j12 use_llvm=yes
 # or g++
 scons platform=linux -j12
 ```
+
+### Results
+
+```bash
+cpp_demo/
+├── .clangd
+├── .gitignore
+├── .sconsign.dblite
+├── README.md
+├── SConstruct
+├── compile_commands.json
+├── demo/
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── .godot/
+│   ├── icon.svg
+│   ├── icon.svg.import
+│   ├── main.tscn
+│   ├── project.godot
+│   └── bin/
+│       ├── gdexample.gdextension
+│       └── libgdexample.linux.template_debug.x86_64.so
+├── godot-cpp/
+└── src/
+    ├── gdexample.cpp
+    ├── gdexample.h
+    ├── gdexample.os
+    ├── register_types.cpp
+    ├── register_types.h
+    └── register_types.os
+```
+
+### Create a gdextension file
+
+- [demo/bin/gdexample.gdextension](demo/bin/gdexample.gdextension)
+
+## GDExample Node
+
+1. a newly available GDExample Node to the main scene.
 

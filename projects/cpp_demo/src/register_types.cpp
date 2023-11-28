@@ -32,7 +32,8 @@ example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address,
 
   init_obj.register_initializer(initialize_example_module);
   init_obj.register_terminator(uninitialize_example_module);
-  init_obj.set_minimum_library_initialization_level(godot::MODULE_INITIALIZATION_LEVEL_SCENE);
+  init_obj.set_minimum_library_initialization_level(
+      godot::MODULE_INITIALIZATION_LEVEL_SCENE);
 
   return init_obj.init();
 }
