@@ -9,6 +9,7 @@
 ## Games
 
 - [Dodge](projects/dodge)
+- [GDExtension C++](projects/cpp_demo)
 
 ## Docs
 

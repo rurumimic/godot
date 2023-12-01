@@ -178,5 +178,20 @@ cpp_demo/
 
 ## GDExample Node
 
-1. a newly available GDExample Node to the main scene.
+- [src/gdexample.cpp](src/gdexample.cpp)
+- [src/gdexample.h](src/gdexample.h)
+- [src/register_types.cpp](src/register_types.cpp)
+- [src/register_types.h](src/register_types.h)
+
+### Add a Node
+
+a newly available GDExample Node to the main scene.
+
+![](images/gdexample.node.png)
+
+### Signal
+
+Connect a signal and Run:
+
+![](images/demo.png)
 
