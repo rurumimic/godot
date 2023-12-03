@@ -12,10 +12,19 @@
 mkdir -p ~/.local/godot.app/bin
 ```
 
+### Unzip App
+
+```bash
+unzip Godot_v4.y.z-stable_linux.x86_64.zip -d ~/.local/godot.app/bin
+
+Archive:  Godot_v4.y.z-stable_linux.x86_64.zip
+  inflating: ~/.local/godot.app/bin/Godot_v4.y.z-stable_linux.x86_64
+```
+
 ### Symlinks
 
 ```bash
-ln -s ~/.local/godot.app/bin/Godot_v4.y.z-stable_linux.x86_64 ~/.local/godot.app/bin/godot
+ln -sf ~/.local/godot.app/bin/Godot_v4.y.z-stable_linux.x86_64 ~/.local/godot.app/bin/godot
 ln -s ~/.local/godot.app/bin/godot ~/.local/bin/godot
 ln -s ~/.local/godot.app/godot.desktop ~/.local/share/applications/godot.desktop
 ```
